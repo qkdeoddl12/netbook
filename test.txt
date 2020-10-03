@@ -1,2 +1,6 @@
 asdawdawdasdatest
+<<<<<<< HEAD
 asdawdawdawd
+=======
+fadsfafafafaa
+>>>>>>> da49bc54040505a79c358d047614c8ac7cb0d020
