@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="memberMapper">
+	<!-- 회원가입 작 -->
+	<insert id="register">
+		INSERT INTO user( 
+		u_ID, 
+		u_PASSWORD, 
+		u_PHONE, 
+		u_EMAIL,
+		u_JOIN_DATE,
+		u_POINT,
+		u_LAST_LOGIN,
+		u_STATE,
+		u_POSTCODE,
+		u_ADD1,
+		u_ADD2,
+		u_BIRTH,
+		u_GENDER
+		)
+		VALUES(
+		#{u_ID}, 
+		#{u_PASSWORD}, 
+		#{u_PHONE},
+		#{u_EMAIL},
+		#{u_JOIN_DATE},
+		#{u_POINT},
+		#{u_LAST_LOGIN},
+		#{u_STATE},
+		#{u_POSTCODE},
+		#{u_ADD1},
+		#{u_ADD2},
+		#{u_BIRTH},
+		#{u_GENDER}
+		)
+	</insert>
+	
+	<!-- 로그인 -->
+	<select id="login" resultType="com.netbook.web.vo.MemberVO">
+		SELECT u_ID, u_PASSWORD 
+		  FROM user
+		 WHERE u_ID = #{u_Id}
+		   AND u_PASSWORD = #{u_PASSWORD}   
+	</select>
+
+</mapper>

@@ -1,9 +1,5 @@
 package com.netbook.web.bean;
 
-import java.sql.Date;
-
-
-
 public class TestBean {
 
 	private String a_ID;
