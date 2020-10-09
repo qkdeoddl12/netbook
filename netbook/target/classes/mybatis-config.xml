@@ -13,6 +13,7 @@
 	<typeAliases>		
 
 	<typeAlias alias="Test" type="com.netbook.web.bean.TestBean" />
+	<!--  <typeAlias alias="Member" type="com.netbook.web.vo.MemberVO"/> -->
 
 </typeAliases>
 

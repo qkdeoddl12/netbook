@@ -4,12 +4,12 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="memberMapper">
-	<!-- 회원가입 작 -->
+	<!-- 회원가입 작업 -->
 	<insert id="register">
-		INSERT INTO user( 
-		u_ID, 
-		u_PASSWORD, 
-		u_PHONE, 
+		INSERT INTO user(
+		u_ID,
+		u_PASSWORD,
+		u_PHONE,
 		u_EMAIL,
 		u_JOIN_DATE,
 		u_POINT,
@@ -22,8 +22,8 @@
 		u_GENDER
 		)
 		VALUES(
-		#{u_ID}, 
-		#{u_PASSWORD}, 
+		#{u_ID},
+		#{u_PASSWORD},
 		#{u_PHONE},
 		#{u_EMAIL},
 		#{u_JOIN_DATE},
@@ -37,13 +37,21 @@
 		#{u_GENDER}
 		)
 	</insert>
-	
+
 	<!-- 로그인 -->
 	<select id="login" resultType="com.netbook.web.vo.MemberVO">
-		SELECT u_ID, u_PASSWORD 
-		  FROM user
-		 WHERE u_ID = #{u_Id}
-		   AND u_PASSWORD = #{u_PASSWORD}   
+		SELECT u_ID, u_PASSWORD, u_EMAIL
+		FROM user
+		WHERE u_ID = #{u_Id}
+		AND u_PASSWORD = #{u_PASSWORD}
 	</select>
+
+	<!-- 회원정보 수정 -->
+	<update id="memberUpdate">
+		UPDATE user SET
+		u_PASSWORD = #{u_PASSWORD},
+		U_EMAIL = #{u_EMAIL}
+		WHERE u_ID = #{u_Id}
+	</update>
 
 </mapper>
